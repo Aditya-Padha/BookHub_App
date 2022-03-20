@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/drawer_header.xml" value="0.1" />
+        <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/fragment_about_app.xml" value="0.13134057971014493" />
+        <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/fragment_dashboard.xml" value="0.13134057971014493" />
+        <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/fragment_favourites.xml" value="0.13134057971014493" />
+        <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/menu/menu_drawer.xml" value="0.264" />
       </map>
     </option>
