@@ -1,12 +1,13 @@
-package com.aditya.bookhub
+package com.aditya.bookhub.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.aditya.bookhub.R
 
-class DashboardFragment : Fragment() {
+class FavouritesFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -14,7 +15,6 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        return view
+        return inflater.inflate(R.layout.fragment_favourites, container, false)
     }
 }
