@@ -6,11 +6,12 @@
         <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/drawer_header.xml" value="0.264" />
         <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/fragment_about_app.xml" value="0.13134057971014493" />
-        <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/fragment_dashboard.xml" value="0.264" />
+        <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/fragment_dashboard.xml" value="0.16842105263157894" />
         <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/fragment_favourites.xml" value="0.13134057971014493" />
         <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/layout/recycler_dashboard_single_row.xml" value="0.1" />
         <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/menu/menu_drawer.xml" value="0.16911764705882354" />
+        <entry key="..\:/Users/Aditya Padha/AndroidStudioProjects/BookHub/app/src/main/res/xml/network_security_config.xml" value="0.1" />
       </map>
     </option>
   </component>
