@@ -1,6 +1,7 @@
 package com.aditya.bookhub.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.aditya.bookhub.R
+import com.aditya.bookhub.activity.DescriptionActivity
 import com.aditya.bookhub.model.Book
 import com.squareup.picasso.Picasso
 
@@ -18,6 +20,10 @@ class DashboardRecyclerAdapter(val context: Context, val itemList: ArrayList<Boo
         val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_dashboard_single_row,parent,false)
 
         return DashboardViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        return itemList.size
     }
 
     override fun onBindViewHolder(holder: DashboardViewHolder, position: Int) {
@@ -30,12 +36,10 @@ class DashboardRecyclerAdapter(val context: Context, val itemList: ArrayList<Boo
         Picasso.get().load(book.bookImage).error(R.drawable.default_book_cover).into(holder.txtBookImage)
 
         holder.llContent.setOnClickListener{
-            Toast.makeText(context, "Clicked on ${holder.txtBookName.text}", Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, DescriptionActivity::class.java)
+            intent.putExtra("book_id",book.bookId)
+            context.startActivity(intent)
         }
-    }
-
-    override fun getItemCount(): Int {
-        return itemList.size
     }
 
     class DashboardViewHolder(view: View): RecyclerView.ViewHolder(view){
