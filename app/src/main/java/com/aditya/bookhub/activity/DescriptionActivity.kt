@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
@@ -12,7 +13,10 @@ import android.webkit.JsPromptResult
 import android.widget.*
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
+import androidx.room.Room
 import com.aditya.bookhub.R
+import com.aditya.bookhub.database.BookDatabase
+import com.aditya.bookhub.database.BookEntity
 import com.aditya.bookhub.util.ConnectionManager
 import com.android.volley.Request
 import com.android.volley.Response
@@ -126,8 +130,34 @@ class DescriptionActivity : AppCompatActivity() {
             dialog.create()
             dialog.show()
         }
+    }
+    class DBAsyncTask(val context:Context,val bookEntity: BookEntity, val mode:Int): AsyncTask<Void,Void,Boolean>() {
 
+        val db = Room.databaseBuilder(context, BookDatabase::class.java, "books-db").build()
+        override fun doInBackground(vararg p0: Void?): Boolean {
 
+            when (mode) {
 
+                1 -> {
+                    //Check DB if book is favourite or not
+                    val book: BookEntity? = db.bookDao().getBookById(bookEntity.book_id.toString())
+                    db.close()
+                    return book != null
+                }
+                2 -> {
+                    //Save book into DB as favourite
+                    db.bookDao().insertBook(bookEntity)
+                    db.close()
+                    return true
+                }
+                3 -> {
+                    //Remove book from Favourite
+                    db.bookDao().deleteBook(bookEntity)
+                    db.close()
+                    return true
+                }
+            }
+            return false
+        }
     }
 }
