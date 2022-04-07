@@ -6,10 +6,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
@@ -52,6 +50,8 @@ class DashboardFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
+
+        setHasOptionsMenu(true)
 
         recyclerDashboard = view.findViewById(R.id.recyclerDashboard)
 
@@ -111,7 +111,8 @@ class DashboardFragment : Fragment() {
             },
                 Response.ErrorListener {
                     //here we will handle the errors
-                    Toast.makeText(activity as Context,"Volley error occured!!!",Toast.LENGTH_SHORT).show()
+                    if(activity!=null)
+                        Toast.makeText(activity as Context,"Volley error occured!!!",Toast.LENGTH_SHORT).show()
                 }){
                 override fun getHeaders(): MutableMap<String, String> {
                     val headers = HashMap<String, String>()
@@ -142,5 +143,9 @@ class DashboardFragment : Fragment() {
 
 
         return view
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater?.inflate(R.menu.menu_dashboard,menu)
     }
 }
