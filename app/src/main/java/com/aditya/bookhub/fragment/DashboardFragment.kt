@@ -25,6 +25,9 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONException
+import java.util.*
+import kotlin.Comparator
+import kotlin.collections.HashMap
 
 class DashboardFragment : Fragment() {
 
@@ -42,6 +45,14 @@ class DashboardFragment : Fragment() {
 
     val bookInfoList = arrayListOf<Book>()
 
+    var ratingComparator = Comparator<Book>{book1, book2->
+        if(book1.bookRating.compareTo(book2.bookRating, true) == 0){
+            book1.bookName.compareTo(book2.bookName, true)
+        } else{
+            book1.bookRating.compareTo(book2.bookRating, true)
+        }
+
+    }
 
 
     override fun onCreateView(
@@ -147,5 +158,17 @@ class DashboardFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater?.inflate(R.menu.menu_dashboard,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item?.itemId
+        if(id == R.id.action_sort){
+            Collections.sort(bookInfoList,ratingComparator)
+            bookInfoList.reverse()
+        }
+
+        recyclerAdapter.notifyDataSetChanged()
+
+        return super.onOptionsItemSelected(item)
     }
 }
